@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Color(0xFF2b1615),
       body: Container(
-        margin: EdgeInsets.only(top: 80, left: 30, right: 30),
+        margin: EdgeInsets.only(top: 100, left: 40, right: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -65,15 +65,18 @@ class _HomeState extends State<Home> {
                 fontSize: 20,
               ),
             ),
-
             SizedBox(height: 40),
+
             Row(
               children: [
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Booking(service: 'Classic Shaving',)),
+                      MaterialPageRoute(
+                        builder:
+                            (context) => Booking(service: 'Classic Shaving'),
+                      ),
                     );
                   },
                   child: Flexible(
@@ -81,6 +84,7 @@ class _HomeState extends State<Home> {
                     child: Container(
                       padding: EdgeInsets.only(left: 10, right: 10),
                       height: 150,
+                      width: 150,
                       decoration: BoxDecoration(
                         color: Color(0xFFe29452),
                         borderRadius: BorderRadius.circular(20),
@@ -114,7 +118,9 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Booking(service: 'Hair Washing',)),
+                      MaterialPageRoute(
+                        builder: (context) => Booking(service: 'Hair Washing'),
+                      ),
                     );
                   },
                   child: Flexible(
@@ -122,6 +128,7 @@ class _HomeState extends State<Home> {
                     child: Container(
                       padding: EdgeInsets.only(left: 10, right: 10),
                       height: 150,
+                      width: 150,
                       decoration: BoxDecoration(
                         color: Color(0xFFe29452),
                         borderRadius: BorderRadius.circular(20),
@@ -159,7 +166,9 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Booking(service: 'hair cutting',)),
+                      MaterialPageRoute(
+                        builder: (context) => Booking(service: 'hair cutting'),
+                      ),
                     );
                   },
                   child: Flexible(
@@ -167,6 +176,7 @@ class _HomeState extends State<Home> {
                     child: Container(
                       padding: EdgeInsets.all(5),
                       height: 150,
+                      width: 150,
                       decoration: BoxDecoration(
                         color: Color(0xFFe29452),
                         borderRadius: BorderRadius.circular(20),
@@ -200,7 +210,10 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Booking(service: 'beard trimming',)),
+                      MaterialPageRoute(
+                        builder:
+                            (context) => Booking(service: 'beard trimming'),
+                      ),
                     );
                   },
                   child: Flexible(
@@ -208,6 +221,7 @@ class _HomeState extends State<Home> {
                     child: Container(
                       padding: EdgeInsets.only(left: 10, right: 10),
                       height: 150,
+                      width: 150,
                       decoration: BoxDecoration(
                         color: Color(0xFFe29452),
                         borderRadius: BorderRadius.circular(20),
@@ -247,7 +261,9 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Booking(service: 'facials',)),
+                      MaterialPageRoute(
+                        builder: (context) => Booking(service: 'facials'),
+                      ),
                     );
                   },
                   child: Flexible(
@@ -255,6 +271,7 @@ class _HomeState extends State<Home> {
                     child: Container(
                       padding: EdgeInsets.only(left: 10, right: 10),
                       height: 150,
+                      width: 150,
                       decoration: BoxDecoration(
                         color: Color(0xFFe29452),
                         borderRadius: BorderRadius.circular(20),
@@ -288,7 +305,10 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Booking(service: 'Kids Hair cutting',)),
+                      MaterialPageRoute(
+                        builder:
+                            (context) => Booking(service: 'Kids Hair cutting'),
+                      ),
                     );
                   },
                   child: Flexible(
@@ -296,6 +316,7 @@ class _HomeState extends State<Home> {
                     child: Container(
                       padding: EdgeInsets.only(left: 10, right: 10),
                       height: 150,
+                      width: 150,
                       decoration: BoxDecoration(
                         color: Color(0xFFe29452),
                         borderRadius: BorderRadius.circular(20),
@@ -315,7 +336,6 @@ class _HomeState extends State<Home> {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 15,
                               ),
                             ),
                           ],

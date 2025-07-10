@@ -18,10 +18,24 @@ class _BookingState extends State<Booking> {
       firstDate: DateTime(2025),
       lastDate: DateTime(2026),
     );
-    if ( pickedDate != null && pickedDate !=_selecteddate) {
-  setState(() {
-    _selecteddate = pickedDate;
-  });
+    if (pickedDate != null && pickedDate != _selecteddate) {
+      setState(() {
+        _selecteddate = pickedDate;
+      });
+    }
+  }
+
+  TimeOfDay _selectedTime = TimeOfDay.now();
+
+  Future<void> _selectTime(BuildContext context) async {
+    final TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: _selectedTime,
+    );
+    if (picked != null && picked != _selectedTime) {
+      setState(() {
+        _selectedTime = picked;
+      });
     }
   }
 
@@ -84,13 +98,18 @@ class _BookingState extends State<Booking> {
                       fontWeight: FontWeight.w800,
                     ),
                   ),
-
                   SizedBox(height: 10),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.calendar_month, size: 35, color: Colors.white),
+                      GestureDetector(
+                        onTap: () => _selectDate(context),
+                        child: Icon(
+                          Icons.calendar_month,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                      ),
                       SizedBox(width: 20),
                       Text(
                         "${_selecteddate.day}/${_selecteddate.month}/${_selecteddate.year}",
@@ -105,9 +124,7 @@ class _BookingState extends State<Booking> {
                 ],
               ),
             ),
-
             SizedBox(height: 20),
-
             Container(
               width: MediaQuery.of(context).size.width,
               height: 100,
@@ -118,7 +135,7 @@ class _BookingState extends State<Booking> {
               child: Column(
                 children: [
                   Text(
-                    'Set Date',
+                    'Set Time',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
@@ -129,10 +146,17 @@ class _BookingState extends State<Booking> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.timer_outlined, color: Colors.white, size: 35),
+                      GestureDetector(
+                        onTap: () => _selectTime(context),
+                        child: Icon(
+                          Icons.timer_outlined,
+                          color: Colors.white,
+                          size: 35,
+                        ),
+                      ),
                       SizedBox(width: 10),
                       Text(
-                        "${_selecteddate.hour}:${_selecteddate.minute}",
+                        _selectedTime.format(context),
                         style: TextStyle(
                           fontSize: 25,
                           color: Colors.white,
@@ -142,6 +166,27 @@ class _BookingState extends State<Booking> {
                     ],
                   ),
                 ],
+              ),
+            ),
+
+            SizedBox(height: 40),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: Color(0xFFfe8f33),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Center(
+                child: Text(
+                  'BOOK NOW',
+
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 25,
+                  ),
+                ),
               ),
             ),
           ],
