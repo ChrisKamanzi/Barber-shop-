@@ -1,4 +1,5 @@
 import 'package:barber_shop/pages/home.dart';
+import 'package:barber_shop/pages/login.dart';
 import 'package:barber_shop/pages/onboard.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: OnBoard(), debugShowCheckedModeBanner: false);
+    return MaterialApp(home: Login(), debugShowCheckedModeBanner: false);
   }
 }
